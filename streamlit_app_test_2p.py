@@ -11,7 +11,7 @@ DF = pd.read_csv('https://raw.githubusercontent.com/murpi/wilddata/master/quests
 
 DF
 
---
+
 
 viz_correlation = sns.heatmap(DF.corr(), 
 								center=0,
@@ -27,7 +27,7 @@ option = st.selectbox(
 
 st.write('You selected:', option)
 
---
+
 
 sns.set_style("white")
 
@@ -43,19 +43,19 @@ st.pyplot(kdeplot2.figure)
 kdeplot3 =sns.kdeplot(x=DF.cylinders, y=DF.weightlbs, cmap="Blues", shade=True, thresh=0)
 st.pyplot(kdeplot3.figure)
 
---
+
 
 with sns.axes_style('white'):
     jointplot1 = sns.jointplot(x=DF.cylinders, y=DF.mpg, kind='kde')
 st.pyplot(jointplot1.figure)
 
---
+
 
 with sns.axes_style('white'):
     jointplot2 = sns.jointplot(x=DF.cylinders, y=DF.mpg, kind='hex')
 st.pyplot(jointplot2.figure)
 
---
+
 
 if st.button('Say hello'):
     st.write('Why hello there')
