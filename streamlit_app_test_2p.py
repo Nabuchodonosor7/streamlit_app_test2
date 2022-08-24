@@ -18,7 +18,7 @@ viz_correlation = sns.heatmap(DF.corr(),
 								cmap = sns.color_palette("vlag", as_cmap=True)
 								)
 
-st.pyplot(viz_correlation.figure)
+st.pyplot(viz_correlation.figure, clear_figure=True)
 
 
 option = st.selectbox(
@@ -33,27 +33,27 @@ sns.set_style("white")
 
 # Basic 2D density plot
 kdeplot1 = sns.kdeplot(x=DF.cylinders, y=DF.mpg)
-st.pyplot(kdeplot1.figure)
+st.pyplot(kdeplot1.figure, clear_figure=True)
  
 # Custom the color, add shade and bandwidth
 kdeplot2 =sns.kdeplot(x=DF.cylinders, y=DF.hp, cmap="Reds", shade=True, bw_adjust=.5)
-st.pyplot(kdeplot2.figure)
+st.pyplot(kdeplot2.figure, clear_figure=True)
 
 # Add thresh parameter
 kdeplot3 =sns.kdeplot(x=DF.cylinders, y=DF.weightlbs, cmap="Blues", shade=True, thresh=0)
-st.pyplot(kdeplot3.figure)
+st.pyplot(kdeplot3.figure, clear_figure=True)
 
 
 
 with sns.axes_style('white'):
     jointplot1 = sns.jointplot(x=DF.cylinders, y=DF.mpg, kind='kde')
-st.pyplot(jointplot1.figure)
+st.pyplot(jointplot1.figure, clear_figure=True)
 
 
 
 with sns.axes_style('white'):
     jointplot2 = sns.jointplot(x=DF.cylinders, y=DF.mpg, kind='hex')
-st.pyplot(jointplot2.figure)
+st.pyplot(jointplot2.figure, clear_figure=True)
 
 
 
